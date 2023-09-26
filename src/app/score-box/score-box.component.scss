@@ -1,0 +1,31 @@
+@use "variables";
+@use "mixins";
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+}
+
+.score-box {
+  @include mixins.default-centering;
+  flex-direction: column;
+  row-gap: 0.25rem;
+  background-color: white;
+  width: 9.375rem;
+  height: 6.875rem;
+  border-radius: 10px;
+
+  &__title {
+    margin: 0;
+    color: variables.$scoreTextColor;
+    letter-spacing: 2px;
+  }
+
+  &__value {
+    margin: 0;
+    color: variables.$darkTextColor;
+    font-size: 70px;
+    line-height: 0.8;
+  }
+}

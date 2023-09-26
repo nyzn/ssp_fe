@@ -1,0 +1,51 @@
+@use "mixins";
+
+.hand-option {
+  @include mixins.default-centering;
+  width: 12.5rem;
+  height: 12.5rem;
+  border-radius: 100%;
+
+  &--big {
+    transform: scale(1.5);
+  }
+
+  &--ROCK {
+    @include mixins.outer-circle-border(
+      hsl(369, 76%, 52%),
+      hsl(369, 75%, 56%),
+      hsl(367, 81%, 35%)
+    );
+  }
+
+  &--PAPER {
+    @include mixins.outer-circle-border(
+      hsl(250, 84%, 62%),
+      hsl(250, 84%, 65%),
+      hsl(249, 60%, 46%)
+    );
+  }
+
+  &--SCISSOR {
+    @include mixins.outer-circle-border(
+      hsl(59, 84%, 49%),
+      hsl(60, 79%, 53%),
+      hsl(48, 71%, 44%)
+    );
+  }
+
+  &__inner-circle {
+    @include mixins.default-centering;
+    width: 9.375rem;
+    height: 9.375rem;
+    border-radius: 100%;
+    background-color: white;
+    box-shadow: inset 0px 8px 0px 0px hsl(228, 23%, 79%);
+
+    &-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      transform: scale(1.4);
+    }
+  }
+}

@@ -1,1 +1,8 @@
-<p>hand-option works!</p>
+<div [class]="classNames" (click)="optionClickHandler()">
+  <div class="hand-option__inner-circle">
+    <mat-icon
+      [svgIcon]="iconName"
+      class="hand-option__inner-circle-icon"
+    ></mat-icon>
+  </div>
+</div>

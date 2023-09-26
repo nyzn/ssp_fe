@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Game } from 'src/shared/class/game';
+import { History } from '../src/shared/class/history';
 
 @Component({
   selector: 'app-score-box',
@@ -7,7 +7,7 @@ import { Game } from 'src/shared/class/game';
   styleUrls: ['./score-box.component.scss'],
 })
 export class ScoreBoxComponent {
-  @Input() history: Array<Game> = [];
+  @Input() history: History;
 
   constructor() {}
 }

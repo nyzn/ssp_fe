@@ -1,0 +1,20 @@
+$mainContentGap: 3.125rem;
+$rulesButtonSpacing: 1.875rem;
+
+.main-container {
+  &__play-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: $mainContentGap;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: fixed;
+    bottom: $rulesButtonSpacing;
+    right: $rulesButtonSpacing;
+  }
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Game } from 'src/shared/class/game';
-import { GameService } from 'src/shared/services/game.service';
+import { GameService } from 'src/shared/services/gameservice.service';
+import { History } from '../src/shared/class/history';
 
 @Component({
   selector: 'app-header',
@@ -8,18 +8,12 @@ import { GameService } from 'src/shared/services/game.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  public history: Array<Game> = [];
+  public history: History;
 
   constructor(private gameService: GameService) {}
 
   ngOnInit(): void {
-    this.history = new Array();
-
-    this.gameService.getHistory().subscribe(
-      (data) => {
-        this.history = data;
-      },
-      (error) => console.log('ERROR by getHistory', error)
-    );
+    this.gameService.fetchList();
+    this.gameService.history.subscribe((data) => (this.history = data));
   }
 }

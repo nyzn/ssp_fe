@@ -1,0 +1,6 @@
+<mat-list class="list" *ngIf="games">
+  <button class="delete" (click)="deleteHistory()">Delete history</button>
+  <mat-list-item *ngFor="let item of games">
+    <app-history-item [game]="item"></app-history-item>
+  </mat-list-item>
+</mat-list>

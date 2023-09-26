@@ -9,10 +9,4 @@
   padding: 1.25rem;
   border: 2px solid variables.$boxBorderColor;
   border-radius: 15px;
-
-  &__logo {
-    @include mixins.default-centering;
-    width: 12.5rem;
-    height: 6.25rem;
-  }
 }

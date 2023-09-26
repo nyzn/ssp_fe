@@ -1,1 +1,54 @@
-<p>play-area works!</p>
+<div class="play-area">
+  <div class="play-area__start" *ngIf="!showChoices && !showResults">
+    <app-hand-option
+      [option]="HandSign.PAPER"
+      (selected)="gameStart($event)"
+    ></app-hand-option>
+    <app-hand-option
+      [option]="HandSign.SCISSOR"
+      (selected)="gameStart($event)"
+    ></app-hand-option>
+    <app-hand-option
+      [option]="HandSign.ROCK"
+      (selected)="gameStart($event)"
+    ></app-hand-option>
+  </div>
+  <div class="play-area__final" *ngIf="showChoices">
+    <div class="play-area__final-choice play-area__final-choice-player">
+      <div class="play-area__final-choice-text">YOU PICKED</div>
+      <app-hand-option [option]="playerHand" [isBig]="isBig"></app-hand-option>
+    </div>
+    <div class="play-area__final-results" *ngIf="showResults">
+      <p
+        class="play-area__final-results-header"
+        *ngIf="gameState === Winner.PLAYER"
+      >
+        YOU WIN
+      </p>
+      <p
+        class="play-area__final-results-header"
+        *ngIf="gameState === Winner.NPC"
+      >
+        YOU LOSE
+      </p>
+      <p
+        class="play-area__final-results-header"
+        *ngIf="gameState === Winner.TIE"
+      >
+        IT'S A TIE
+      </p>
+      <app-replay-button
+        (clicked)="restartGame()"
+        [winner]="gameState"
+      ></app-replay-button>
+    </div>
+    <div class="play-area__final-choice play-area__final-choice-ai">
+      <div class="play-area__final-choice-text">THE HOUSE PICKED</div>
+      <app-hand-option
+        [option]="npcHand"
+        [isBig]="isBig"
+        *ngIf="npcHand !== undefined"
+      ></app-hand-option>
+    </div>
+  </div>
+</div>

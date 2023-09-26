@@ -1,1 +1,11 @@
-<div *ngIf="history">{{ history.length }}</div>
+<div class="container">
+  <div class="score-box">
+    <h3 class="score-box__title">PLAYER</h3>
+    <p class="score-box__value">{{ history.playerWins }}</p>
+  </div>
+
+  <div class="score-box">
+    <h3 class="score-box__title">NPC</h3>
+    <p class="score-box__value">{{ history.npcWins }}</p>
+  </div>
+</div>

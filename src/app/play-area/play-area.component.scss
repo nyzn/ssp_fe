@@ -1,0 +1,75 @@
+@use "variables";
+@use "mixins";
+
+// From https://stackoverflow.com/questions/37923231/how-can-i-use-a-material-design-icon-as-a-css-background-image-value - see ReadMe for explenation.
+$backgroundIcon: url('data:image/svg+xml;utf-8,<svg width="313" height="278" xmlns="http://www.w3.org/2000/svg"><path stroke="%23000" stroke-width="15" fill="none" opacity=".2" d="M156.5 262 300 8H13z"/></svg>');
+
+.play-area {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__start {
+    @include mixins.default-centering;
+    flex-wrap: wrap;
+    column-gap: 5rem;
+    row-gap: 2.5rem;
+    width: 37.5rem;
+    background-image: $backgroundIcon;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__final {
+    display: flex;
+    flex-direction: row;
+    column-gap: 7.813rem;
+    letter-spacing: 2px;
+    background-color: transparent;
+    color: variables.$defaultFontColor;
+    font-family: inherit;
+    font-weight: variables.$defaultFontWeight;
+
+    &-choice {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 6.25rem;
+
+      &-text {
+        font-size: 20px;
+        white-space: nowrap;
+      }
+
+      &-ai {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-blank-space {
+          margin: 1.563rem;
+          background-color: rgba(0, 0, 0, 0.1);
+          width: 12.5rem;
+          height: 12.5rem;
+          border-radius: 100%;
+        }
+      }
+    }
+
+    &-results {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      row-gap: 3rem;
+      padding-bottom: 3.75rem;
+
+      &-header {
+        margin: 0;
+        font-size: 50px;
+        white-space: nowrap;
+      }
+    }
+  }
+}
