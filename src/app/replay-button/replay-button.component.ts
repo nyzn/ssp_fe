@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Winner } from 'src/shared/enum/winner';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-replay-button',
@@ -7,12 +6,7 @@ import { Winner } from 'src/shared/enum/winner';
   styleUrls: ['./replay-button.component.scss'],
 })
 export class ReplayButtonComponent {
-  private baseClassName: string = 'replay-button';
-
-  @Input() winner: Winner | undefined;
   @Output() clicked: EventEmitter<any> = new EventEmitter();
-
-  classNames: string = this.baseClassName;
 
   constructor() {}
 

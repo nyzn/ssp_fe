@@ -6,12 +6,4 @@
   font-family: inherit;
   font-weight: variables.$defaultFontWeight;
   letter-spacing: 2px;
-
-  &--victory {
-    color: variables.$darkTextColor;
-  }
-
-  &--lose {
-    color: variables.$loseTextColor;
-  }
 }

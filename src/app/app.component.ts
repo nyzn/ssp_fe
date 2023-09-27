@@ -9,7 +9,22 @@ import { IconRegistryService } from './src/shared/services/icon-registry.service
 export class AppComponent {
   title = 'ssp_fe';
 
+  navLinks: any[];
+
   constructor(private iconRegistry: IconRegistryService) {
     this.iconRegistry.performRegistration();
+
+    this.navLinks = [
+      {
+        label: 'Play',
+        link: '/play',
+        index: 0,
+      },
+      {
+        label: 'History',
+        link: './history',
+        index: 1,
+      },
+    ];
   }
 }

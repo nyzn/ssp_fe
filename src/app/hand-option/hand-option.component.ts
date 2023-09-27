@@ -23,7 +23,6 @@ export class HandOptionComponent {
     if (this.option !== undefined) {
       const HandSigns = Object.values(HandSign);
       this.iconName = HandSigns[this.option] + '-icon';
-      console.log('ICONNAME: ', this.iconName);
       this.classNames = `${this.baseClassName} ${this.baseClassName}--${
         HandSigns[this.option]
       }`;

@@ -19,7 +19,6 @@ import { GameService } from 'src/shared/services/gameservice.service';
 import { ReplayButtonComponent } from './replay-button/replay-button.component';
 import { HistoryListComponent } from './history-list/history-list.component';
 import { HistoryItemComponent } from './history-item/history-item.component';
-import { TabNavigationComponent } from './tab-navigation/tab-navigation.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +30,6 @@ import { TabNavigationComponent } from './tab-navigation/tab-navigation.componen
     ReplayButtonComponent,
     HistoryListComponent,
     HistoryItemComponent,
-    TabNavigationComponent,
   ],
   imports: [
     BrowserModule,

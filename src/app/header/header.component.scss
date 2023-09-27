@@ -9,4 +9,8 @@
   padding: 1.25rem;
   border: 2px solid variables.$boxBorderColor;
   border-radius: 15px;
+
+  h1 {
+    font-weight: variables.$bolderFontWeight;
+  }
 }

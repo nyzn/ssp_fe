@@ -18,6 +18,7 @@
 
   &__title {
     margin: 0;
+    font-weight: variables.$defaultFontWeight;
     color: variables.$scoreTextColor;
     letter-spacing: 2px;
   }
